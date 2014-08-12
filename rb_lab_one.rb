@@ -11,17 +11,17 @@
 # puts "Type '1' to convert from Celsius to Fahrenheit OR type '2' to convert from Fahrenheit to Celsius"
 # type = gets.chomp.to_i
 
-# if type == 1
-# 	puts "Enter Celsius Temperature"
-# 	temp = gets.chomp.to_i
-# 	temp_f = (temp * 2) + 30
-# 	puts "The temperature Celsius is #{temp_f}"
-# else
-# 	puts "Enter Fahrenheit Temperature"
-# 	temp = gets.chomp.to_i
-# 	temp_c ((temp - 32) * 5) / 9
-# 	puts "The temperature Celsius is #{temp_c}"
-# end
+if type == 1
+	puts "Enter Celsius Temperature"
+	temp = gets.chomp.to_i
+	temp_f = (temp * 2) + 30
+	puts "The temperature Celsius is #{temp_f}"
+else
+	puts "Enter Fahrenheit Temperature"
+	temp = gets.chomp.to_i
+	temp_c ((temp - 32) * 5) / 9
+	puts "The temperature Celsius is #{temp_c}"
+end
 
 
 
@@ -37,26 +37,26 @@
 # 6
 # Your result is 9
 
-# puts "What calculation would you like to do? (add, sub, mult, div)"
-# op = gets.chomp
+puts "What calculation would you like to do? (add, sub, mult, div)"
+op = gets.chomp
 
-# puts "What is number 1?"
-# num1 = gets.chomp.to_i
+puts "What is number 1?"
+num1 = gets.chomp.to_i
 
-# puts "What is number 2?"
-# num2 = gets.chomp.to_i
+puts "What is number 2?"
+num2 = gets.chomp.to_i
 
-# if op == "add"
-# 	puts num1 + num2
-# elsif op == "sub"
-# 	puts num1 - num2
-# elsif op == "mult"
-# 	puts num1 * num2
-# elsif op == "div"
-# 	puts num1.to_f / num2.to_f
-# else
-# 	puts "Please enter correct operator"
-# end
+if op == "add"
+	puts num1 + num2
+elsif op == "sub"
+	puts num1 - num2
+elsif op == "mult"
+	puts num1 * num2
+elsif op == "div"
+	puts num1.to_f / num2.to_f
+else
+	puts "Please enter correct operator"
+end
 
 
 
@@ -75,8 +75,14 @@
 
 puts "plese enter your name"
 name = gets.chomp
+arr = []
 
-name
+name.each_char do |letter|
+	arr.push(letter)
+end
+
+x = arr.length - 1
+y = 0
 
 
 
@@ -100,49 +106,49 @@ name
 # yes
 # # Thank you!
 
-# def ATM (op)
-# 	if op == ""
-# 		puts "What would you like to do? (deposit, withdraw, check_balance)"
-# 		op = gets.chomp
-# 	end
-# 	bal = 0
+def ATM (op)
+	if op == ""
+		puts "What would you like to do? (deposit, withdraw, check_balance)"
+		op = gets.chomp
+	end
+	bal = 0
 
-# 	if op == "deposit"
-# 		puts "How much would you like to deposit?"
-# 		numdep = gets.chomp.to_i
-# 		bal = numdep
-# 		puts "New Balance: #{bal}"
-# 		puts "are you done yet?"
-# 		answer = gets.chomp
-# 			if answer == "yes"
-# 				puts "thank you"
-# 			else
-# 				puts "what now?"
-# 				ans = gets.chomp
-# 				ATM(ans)
-# 			end
-# 	elsif op == "withdraw"
-# 		puts "How much would you like to withdraw?"
-# 		numwit = gets.chomp.to_i
-# 		new_bal = bal - numwit
-# 		puts "New Balance: #{new_bal}"
-# 		puts "are you done yet?"
-# 		answer = gets.chomp
-# 			if answer == "yes"
-# 				puts "thank you"
-# 			else
-# 				puts "what now?"
-# 				ans = gets.chomp
-# 				ATM(ans)
-# 			end
-# 	elsif op == "check_balance"
-# 		puts bal
-# 	else
-# 		puts "Please enter correct operation"
-# 	end
-# end
+	if op == "deposit"
+		puts "How much would you like to deposit?"
+		numdep = gets.chomp.to_i
+		bal = numdep
+		puts "New Balance: #{bal}"
+		puts "are you done yet?"
+		answer = gets.chomp
+			if answer == "yes"
+				puts "thank you"
+			else
+				puts "what now?"
+				ans = gets.chomp
+				ATM(ans)
+			end
+	elsif op == "withdraw"
+		puts "How much would you like to withdraw?"
+		numwit = gets.chomp.to_i
+		new_bal = bal - numwit
+		puts "New Balance: #{new_bal}"
+		puts "are you done yet?"
+		answer = gets.chomp
+			if answer == "yes"
+				puts "thank you"
+			else
+				puts "what now?"
+				ans = gets.chomp
+				ATM(ans)
+			end
+	elsif op == "check_balance"
+		puts bal
+	else
+		puts "Please enter correct operation"
+	end
+end
 
-# ATM("")
+ATM("")
 
 
 
@@ -169,25 +175,25 @@ name
 # 19
 # You got it in 7 tries
 
-# def game(x)
-# puts "Guess a number between 1 and 100"
-# guess = gets.chomp.to_i
-# number = 17
-# moves = x
-# 	if guess > number
-# 		puts "#{guess} is higher than the number"
-# 		x = moves + 1
-# 		game(x)
-# 	elsif guess < number
-# 		puts "#{guess} is lower than the number"
-# 		x = moves + 1
-# 		game(x)
-# 	else
-# 		puts "You Win in #{moves} Moves!"
-# 	end
-# end
+def game(x)
+puts "Guess a number between 1 and 100"
+guess = gets.chomp.to_i
+number = 17
+moves = x
+	if guess > number
+		puts "#{guess} is higher than the number"
+		x = moves + 1
+		game(x)
+	elsif guess < number
+		puts "#{guess} is lower than the number"
+		x = moves + 1
+		game(x)
+	else
+		puts "You Win in #{moves} Moves!"
+	end
+end
 
-# game(1)
+game(1)
 
 
 
